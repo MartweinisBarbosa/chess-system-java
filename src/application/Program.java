@@ -16,23 +16,21 @@ public class Program {
 
 		while (true) {
 			try {
-			UI.clearScreen();
-			UI.printBoard(chessMatch.getPieces());
-			System.out.println();
-			System.out.println("source: ");
-			ChessPosition source = UI.readChessPosition(sc);
-			;
-			System.out.println();
-			System.out.println("Taregt: ");
-			ChessPosition target = UI.readChessPosition(sc);
+				UI.clearScreen();
+				UI.printBoard(chessMatch.getPieces());
+				System.out.println();
+				System.out.println("source: ");
+				ChessPosition source = UI.readChessPosition(sc);
+				;
+				System.out.println();
+				System.out.println("Taregt: ");
+				ChessPosition target = UI.readChessPosition(sc);
 
 				ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
-			}
-			catch (ChessExecption e) {
+			} catch (ChessExecption e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
-			}
-			catch (InputMismatchException e) {
+			} catch (InputMismatchException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
 			}
